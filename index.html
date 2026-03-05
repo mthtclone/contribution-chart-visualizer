@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contribution Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tasksTab">Tasks</button>
+    <button class="tab-btn" data-tab="membersTab">Members</button>
+    <button class="tab-btn" data-tab="teamsTab">Teams</button>
+    <button class="tab-btn" data-tab="dataTab">Data</button>
+  </div>
+
+  <div class="tab-content active" id="tasksTab">
+    <div class="section" id="taskManagerSection">
+      <h3>Task Manager</h3>
+      <div class="task-list" id="taskList"></div>
+      <button class="add-btn" id="addTaskBtn">Add Task</button>
+    </div>
+  </div>
+
+  <div class="tab-content" id="membersTab">
+    <div class="section" id="membersSection">
+      <h3>Members</h3>
+      <div>
+        <input type="text" id="newMemberInput" placeholder="Enter member name">
+        <button class="add-btn" id="addMemberBtn">Add Member</button>
+      </div>
+      <div class="member-list" id="memberList"></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="teamsTab">
+    <div class="section" id="teamsSection">
+      <h3>Teams</h3>
+      <div>
+        <input type="text" id="newTeamInput" placeholder="Enter team name">
+        <button class="add-btn" id="addTeamBtn">Add Team</button>
+      </div>
+      <div class="team-list" id="teamList"></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="dataTab">
+    <div class="section" id="dataSection">
+      <h3>Export Data</h3>
+      <button id="exportBtn" class="add-btn">Export JSON</button>
+      <button id="importBtn" class="add-btn">Import JSON</button>
+      <input type="file" id="importFile" accept=".json" style="display:none;">
+    </div>
+  </div>
+
+</div>
+
+<div class="content">
+  <h2>Task Contributions per Assignee</h2>
+  <canvas id="contributionChart"></canvas>
+</div>
+
+<script src="src/main.js"></script>
+
+</body>
+</html>
